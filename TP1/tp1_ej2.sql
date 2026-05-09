@@ -124,7 +124,7 @@ create table Carrera (
 
 create table Docente (
 	legajo int primary key,
-	anios_antiguedad int,
+	fecha_inicio date,
 	usuario_id int not null,
 	foreign key (usuario_id) references Usuario(id)
 );
