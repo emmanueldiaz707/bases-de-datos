@@ -24,7 +24,7 @@ select
 from ships s
 inner join classes c on s.sclass=c.classa
 right join outcomes o on o.ship=s.sname
-where battle='Guadalcanal';
+where o.battle='Guadalcanal';
 
 -- f) Hallar los países que tuvieron tanto cruceros como acorazados
 
