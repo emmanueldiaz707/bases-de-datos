@@ -885,7 +885,7 @@ INSERT INTO usuario (dni, nombre, direccion, sexo, telefono, idlocalidad) VALUES
 ('21277368', 'JUAREZ  JUAN CARLOS ', 'MONTEVIDEO  877', 'M', '496374', '3200'),
 ('21315612', 'GONZALEZ  EDUARDO LUIS ', '9 DE JULIO  1864', 'M', '451085', '3000');
 
-INSERT INTO usuario (dni, nombre, direccion, sexo, telefono, codigo_postal) VALUES
+INSERT INTO usuario (dni, nombre, direccion, sexo, telefono, idlocalidad) VALUES
 ('21318299', 'BARZALA  CARLOS VICENTE ', 'CARACAS-CUERPO 5  1598', 'M', '450182', '2580'),
 ('21323660', 'MILLAN  ROGELIO ', 'RIVADAVIA  1107', 'M', '418248', '3100'),
 ('21334847', 'PEIRO DIAZ  JORGE ALBERTO ', 'JUAN B.JUSTO  2912', 'M', '474451', '2760'),
@@ -915,7 +915,7 @@ INSERT INTO usuario (dni, nombre, direccion, sexo, telefono, codigo_postal) VALU
 ('21989853', 'GIORGI  RENATO MEDARDO ', 'AV.COLON  166', 'M', '417436', '3260'),
 ('21994638', 'WANG YU YUAN  CARLOS E. ', 'AV.D.ALIGHIERI  212', 'M', '441934', '3000');
 
-INSERT INTO docente (dni, legajo, fecha_ingreso) VALUES
+INSERT INTO docente (dni, legajo, fingreso) VALUES
 ('18066409', 'PB646', '1986-01-07'),
 ('18219542', 'DH487', '1985-03-22'),
 ('18220725', 'CQ602', '1984-08-12'),
@@ -991,7 +991,7 @@ INSERT INTO investigador (dni, categoria) VALUES
 ('21731567', '3'),
 ('21903102', '2');
 
-INSERT INTO dicta (dni, id_materia, id_comision) VALUES
+INSERT INTO dicta (dni, idmateria, idcarrera) VALUES
 ('18464917', '1', '2'),
 ('18464917', '1', '5'),
 ('20997728', '1', '2'),
@@ -1053,7 +1053,7 @@ INSERT INTO dicta (dni, id_materia, id_comision) VALUES
 ('19462528', '21', '5'),
 ('18219542', '21', '5');
 
-INSERT INTO pedidoinsatisfecho (isbn, fecha, id_sucursal) VALUES
+INSERT INTO pedidoinsatisfecho (isbn, fecha, cantidad) VALUES
 ('8425335833', '1989-03-20', '2'),
 ('9509681806', '1989-07-31', '1'),
 ('8425335833', '1989-08-22', '2'),
@@ -1110,7 +1110,7 @@ INSERT INTO pedidoinsatisfecho (isbn, fecha, id_sucursal) VALUES
 ('846630164X', '2001-10-23', '1'),
 ('8401014794', '2002-01-30', '1');
 
-INSERT INTO proyecto (id_proyecto, nombre, id_sede) VALUES
+INSERT INTO proyecto (idproyecto, proyecto, iddepartamento) VALUES
 ('1', 'Proyecto 1', '1'),
 ('2', 'Proyecto 2', '2'),
 ('3', 'Proyecto 3', '3'),
@@ -1124,7 +1124,7 @@ INSERT INTO proyecto (id_proyecto, nombre, id_sede) VALUES
 ('11', 'Proyecto 11', '3'),
 ('12', 'Proyecto 12', '1');
 
-INSERT INTO alumno (dni, legajo, fecha_ingreso) VALUES
+INSERT INTO alumno (dni, legajo, fingreso) VALUES
 ('18048777', '3155', '2002-04-01'), ('18075980', '3120', '2002-04-01'),
 ('18139245', '1608', '2000-04-01'), ('18166195', '1027', '2000-04-01'),
 ('18182572', '1799', '2000-04-01'), ('18493031', '1370', '2000-04-01'),
@@ -1171,7 +1171,7 @@ INSERT INTO alumno (dni, legajo, fecha_ingreso) VALUES
 ('21860832', '1698', '2000-04-01'), ('21903102', '1717', '2000-04-01'),
 ('21989853', '3953', '2002-04-01'), ('21994638', '3459', '2002-04-01');
 
-INSERT INTO prestamo (fecha_prestamo, codigo_libro, fecha_vencimiento, fecha_devolucion, dni_alumno) VALUES
+INSERT INTO prestamo (fechaprestamo, idinventario, fechalimite, fechadevolucion, dni) VALUES
 ('1989-01-15', '1008', '1989-02-04', '1989-01-15', '19392803'),
 ('1988-12-17', '1011', '1989-01-08', '1989-01-15', '20367730'),
 ('1989-03-10', '1011', '1989-04-03', '1989-03-26', '19278714'),
@@ -1343,7 +1343,7 @@ INSERT INTO prestamo (fecha_prestamo, codigo_libro, fecha_vencimiento, fecha_dev
 ('1987-09-14', '1001', '1987-10-08', NULL, '19113204'),
 ('1989-12-13', '1015', '1990-01-02', NULL, '20367730');
 
-INSERT INTO cursa (dni_alumno, id_proyecto) VALUES
+INSERT INTO cursa (dni, idmateria) VALUES
 ('20810040', '1'), ('20435241', '1'), ('18914274', '1'), ('19113204', '1'),
 ('21315612', '1'), ('21989853', '1'), ('19588337', '1'), ('18182572', '2'),
 ('19769004', '2'), ('19404461', '2'), ('18980863', '2'), ('19400606', '2'),
@@ -1432,7 +1432,7 @@ INSERT INTO cursa (dni_alumno, id_proyecto) VALUES
 ('20316070', '21'), ('20746638', '21'), ('19961070', '21'), ('19934200', '21'),
 ('20783988', '21'), ('18991114', '21');
 
-INSERT INTO participa (dni_alumno, id_proyecto) VALUES
+INSERT INTO participa (dni, idproyecto) VALUES
 ('18549553', '12'), ('18895265', '5'), ('19316130', '3'), ('19349824', '4'),
 ('19868424', '2'), ('19962421', '3'), ('20005682', '6'), ('20418837', '11'),
 ('20431243', '2'), ('20676660', '7'), ('20787017', '5'), ('20823924', '9'),
