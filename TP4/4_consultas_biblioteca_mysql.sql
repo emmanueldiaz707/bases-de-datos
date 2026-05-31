@@ -57,7 +57,14 @@ where editorial='Sudamericana';
 
 -- e) El título de aquellos libros que hayan sido retirados tanto por docentes que dictan una determinada materia como por alumnos que cursan la misma.
 
-
+select distinct l.titulo from libro l
+inner join ejemplar e_doc on e_doc.isbn=l.isbn 
+inner join prestamo p_doc on p_doc.idinventario=e_doc.idinventario 
+inner join dicta d on d.dni=p_doc.dni 
+inner join ejemplar e_a on e_a.isbn=l.isbn 
+inner join prestamo p_a on p_a.idinventario=e_a.idinventario 
+inner join cursa c on c.dni=p_a.dni 
+where d.idmateria=c.idmateria;
 
 -- f) El nombre de los usuarios a los que se les ha vencido el plazo para devolver algún libro, y que con posterioridad a la fecha de vencimiento hayan retirado algún otro.
 
