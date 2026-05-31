@@ -47,7 +47,13 @@ rollback;
 
 -- d) Listar los departamentos de los cuales dependen todos aquellos investigadores que hayan retirado libros editados por 'Sudamericana'.
 
-
+select distinct departamento from departamento d 
+inner join proyecto pr on pr.iddepartamento=d.iddepartamento
+inner join participa pa on pa.idproyecto=pr.idproyecto
+inner join prestamo p on p.dni=pa.dni 
+inner join ejemplar e on e.idinventario=p.idinventario 
+inner join libro l on l.isbn=e.isbn
+where editorial='Sudamericana';
 
 -- e) El título de aquellos libros que hayan sido retirados tanto por docentes que dictan una determinada materia como por alumnos que cursan la misma.
 
