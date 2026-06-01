@@ -93,3 +93,14 @@ where exists (
     where p.model=pc.model and pc.speed>=1.8);
 
 
+-- i) Hallar los fabricantes de la computadora (PC o laptop) con la máxima velocidad disponible
+select distinct pr.maker,speed from ( 
+  select model, speed from laptop 
+  union  
+  select model, speed from pc) c1
+inner join product pr on pr.model=c1.model
+where c1.speed = ( 
+  select max(c2.speed) from (
+    select speed from laptop
+    union 
+    select speed from pc) c2);
